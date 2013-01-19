@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'music2find.views.home', name='home'),
     # url(r'^music2find/', include('music2find.foo.urls')),
-    url(r'^questions/', include('questions.urls', namespace="questions")),
+    url(r'^', include('questions.urls', namespace="questions")),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

@@ -1,3 +1,8 @@
+{% extends 'base_template.html' %}
+
+{% block title %}Question{% endblock %}
+
+{% block content %}
 <a href="{% url 'questions:index' %}">Back</a>
 <h2>Question:</h2>
 <b>{{ question.question_text }}</b><br>
@@ -16,3 +21,4 @@
 	<li><i>No answers yet.</i></li>
 {% endfor %}
 </ul>
+{% endblock %}
