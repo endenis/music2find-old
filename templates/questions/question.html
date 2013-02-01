@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Question{% endblock %}
+
+{% block content %}
+<a href="{% url 'questions:index' %}">Back</a>
+<h2>Question:</h2>
+<b>{{ question.question_text }}</b><br>
+<br>
+<h2>Answers:</h2>
+<ul>
+{% for answer in question.answer_set.all %}
+	<li>
+		{{ answer.answer_text }}<br>
+		<i>Votes: {{ answer.votes }}</i>
+		{% if answer.is_right %}
+		<br><b>Right answer</b>
+		{% endif %}
+	</li>
+{% empty %}
+	<li><i>No answers yet.</i></li>
+{% endfor %}
+</ul>
+{% endblock %}
